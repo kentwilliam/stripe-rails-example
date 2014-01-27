@@ -3,12 +3,15 @@
 
   <p>Life isn't the same without new ties. Now there's an easy way to stay up-to-date with current trends and look suave in the process!</p>
 
-  <%= form_for :account do |f| %>
-    <label>Email</label> <%= f.email_field :email, placeholder: 'myname@company.com' %>
-  <% end %>
-
-  <form action="" id="stripe-form">
+  <%= form_for :account, url: { action: "create" }, html: { id: "stripe-form" } do %>
     <span class="payment-errors"></span>
+
+    <label>Name</label>
+    <input name="first_name" placeholder="First Name">
+    <input name="last_name" placeholder="Last Name">
+
+    <label>Email</label>
+    <input type="email" name="email" placeholder="myname@company.com">
 
     <label>Card Number</label>
     <input size="20" data-stripe="number" placeholder='xxxx-xxxx-xxxx-xxxx'>
@@ -21,7 +24,7 @@
     <input size="4" data-stripe="exp-year" placeholder="YYYY">
 
     <button type="submit">Subscribe!</button>
-  </form>
+  <% end %>
 </div>
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
