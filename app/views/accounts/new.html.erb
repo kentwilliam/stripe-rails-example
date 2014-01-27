@@ -7,7 +7,7 @@
     <label>Email</label> <%= f.email_field :email, placeholder: 'myname@company.com' %>
   <% end %>
 
-  <form action="" id="payment-form">
+  <form action="" id="stripe-form">
     <span class="payment-errors"></span>
 
     <label>Card Number</label>
@@ -23,3 +23,8 @@
     <button type="submit">Subscribe!</button>
   </form>
 </div>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+  Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+</script>
