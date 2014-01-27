@@ -1,0 +1,9 @@
+<div class="accounts">
+  <h1>Accounts</h1>
+
+  <% @accounts.each do |account| %>
+    <%= account.email %><br>
+  <% end %>
+
+  <%= link_to "Create New Account", accounts_new_path %>
+</div>

@@ -1,16 +1,17 @@
 class AccountsController < ApplicationController
   protect_from_forgery with: :exception
 
-  def new
+  def index
+    Stripe.api_key = "sk_test_f6xQ9zdAdLxmNWbv1fC3CIxq"
+    @accounts = Stripe::Customer.all
   end
 
   def create
-    # Get the credit card details submitted by the form
-    token = params[:stripe_token]
+    Stripe.api_key = "sk_test_f6xQ9zdAdLxmNWbv1fC3CIxq"
 
     # Create a Customer
     customer = Stripe::Customer.create(
-      card: token,
+      card: params[:stripe_token],
       plan: "monthly",
       email: params[:email],
       metadata: {
@@ -19,6 +20,16 @@ class AccountsController < ApplicationController
       }
     )
 
-    render text: 'creating!'
+    account = Account.new
+    account.stripe_customer_id = customer.id
+    success = account.save
+
+    if success
+      flash[:notice] = "Customer registered!"
+      redirect_to accounts_path
+    else
+      flash[:success] = "Could not sign up user!"
+      redirect_to accounts_path
+    end
   end
 end

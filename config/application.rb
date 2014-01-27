@@ -6,9 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-# Stripe API key. Replace with production version on deploy!
-Stripe.api_key = "sk_test_f6xQ9zdAdLxmNWbv1fC3CIxq"
-
 module StripeRailsExample
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

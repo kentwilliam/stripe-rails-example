@@ -17,7 +17,7 @@ jQuery(function($) {
       showErrors(response);
       enableSubmit();
     } else {
-      insertToken(form, stripeToken(response));
+      insertToken(stripeToken(response));
       form.get(0).submit();
     }
   };

@@ -14,6 +14,7 @@ StripeRailsExample::Application.routes.draw do
   root 'accounts#new'
 
   get 'accounts/new' => 'accounts#new'
+  get 'accounts' => 'accounts#index'
   post 'accounts' => 'accounts#create'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
