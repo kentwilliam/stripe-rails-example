@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+  font-size: 100%;
+}
+
+div, section, article, p, nav, header, footer {
+  box-sizing: border-box;
+}
+
+.accounts-signup {
+  margin: 0 auto;
+  max-width: 62rem;
+  padding: 4rem 2rem;
+
+  label {
+    width: 25%;
+    font-weight: 600;
+    clear: left;
+    float: left;
+  }
+
+  input {
+    float: left;
+    font-size: inherit;
+    font-family: inherit;
+    margin-right: 0.5rem;
+  }
+
+  [type=email] {
+    width: 30rem;
+  }
+
+  [data-stripe=number] {
+    width: 30rem;
+  }
+
+  [data-stripe=cvc] {
+    width: 5rem;
+  }
+
+  [data-stripe=exp-month] {
+    width: 2rem;
+  }
+
+  [data-stripe=exp-year] {
+    width: 4rem;
+  }
+
+  [type=submit] {
+    border: none;
+    background: #346799;
+    border-radius: 5px;
+    color: white;
+    float: left;
+    clear: left;
+    margin: 1rem 0 0;
+    padding: 0.4rem 1rem;
+    font-size: inherit;
+  }
+}

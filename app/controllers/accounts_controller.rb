@@ -1,8 +1,7 @@
-class AccountsController < ActionController::Base
+class AccountsController < ApplicationController
   protect_from_forgery with: :exception
 
   def new
-    render text: 'new'
   end
 
   def create

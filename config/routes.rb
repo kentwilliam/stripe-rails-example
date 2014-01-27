@@ -11,6 +11,8 @@ StripeRailsExample::Application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
+  root 'accounts#new'
+
   get 'accounts/new' => 'accounts#new'
   post 'accounts' => 'accounts#create'
 

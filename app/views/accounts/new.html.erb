@@ -1,0 +1,25 @@
+<div class="accounts-signup">
+  <h1>Join the Tie of the Month Club!</h1>
+
+  <p>Life isn't the same without new ties. Now there's an easy way to stay up-to-date with current trends and look suave in the process!</p>
+
+  <%= form_for :account do |f| %>
+    <label>Email</label> <%= f.email_field :email, placeholder: 'myname@company.com' %>
+  <% end %>
+
+  <form action="" id="payment-form">
+    <span class="payment-errors"></span>
+
+    <label>Card Number</label>
+    <input size="20" data-stripe="number" placeholder='xxxx-xxxx-xxxx-xxxx'>
+
+    <label>CVC</label>
+    <input size="4" data-stripe="cvc" placeholder='xxx'>
+
+    <label>Expiration (MM/YYYY)</label>
+    <input size="2" data-stripe="exp-month" placeholder="MM">
+    <input size="4" data-stripe="exp-year" placeholder="YYYY">
+
+    <button type="submit">Subscribe!</button>
+  </form>
+</div>
